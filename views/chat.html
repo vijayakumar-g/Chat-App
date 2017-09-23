@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <title>Messenger</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/chat.css">
+<script src="../css/jquery.min.js"></script>
+<script src="../css/socket.io.js"></script>
+<script src="../css/bootstrap.min.js"></script>
+<script>
+  setTimeout(function() {
+    window.location.reload(1);
+  }, 100000);
+</script>
+
+<body onload="database()">
+  <div>
+    <div class="container">
+      <div class="panel panel-primary">
+        <div id="status" class="panel-heading">
+          <div class="pull-right"><button class="btn btn-info" onclick="logout()">Logout</button></div>
+          <span><img src="../icons/default_avatar_male.jpg" title="Male User" width="30" height="30" alt="User Avatar" class="img-circle" /></span>
+        </div>
+        <div class="panel-body" id="history"></div>
+        <div class="panel-footer">
+          <div class="input-group">
+            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+            <span class="input-group-btn">
+                <button class="btn btn-warning btn-sm" id="btn-chat" onclick="sendMessage()"> Send</button></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="online-status" class="panel panel-primary">
+      <div id="heading" class="panel-heading">
+        <br>
+        <span><img src="https://png.icons8.com/chat/office/16" title="Chat" width="26" height="26" alt="User Avatar" class="img-circle" />MESSENGER</span>
+      </div>
+      <div id="online-users" class="panel-body">
+        <ul class="list-group" id="contact-list">
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../js/signin.js"></script>
+<script src="../js/signup.js"></script>
+<script src="../js/message.js"></script>
+
+</html>

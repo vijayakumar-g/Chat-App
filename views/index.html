@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <title>Messenger</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/chat.css">
+  <script src="../css/jquery.min.js"></script>
+  <script src="../css/socket.io.js"></script>
+  <script src="../css/bootstrap.min.js"></script>
+</head>
+<style>
+  #error-container {
+    color: #FF0000;
+  }
+</style>
+
+<body>
+  <br><br><br>
+  <center>
+    <div class="panel panel-primary" style="max-width: 350">
+      <div class="panel-heading" style="max-height: 50;">LOGIN</div>
+      <div id="index-heading" class="panel-body" style="max-height: 300 overflow:hidden">
+        <br>
+        <form id="form1">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" id="name" data-toggle="tooltip" data-trigger="manual" data-title="Caps lock is on" name="name" class="form-control" placeholder="Username" required>
+          </div><br>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input type="password" data-toggle="tooltip" data-trigger="manual" data-title="Caps lock is on" id="pwd" name="pwd" class="form-control" placeholder="Password" required>
+          </div><br>
+          <div id="error-container"></div><br>
+          <button type="button" id="signin" class="btn btn-info">Sign In</button>&nbsp;
+          <button type="button" id="signup" class="btn btn-info">Sign Up</button>
+        </form>
+        <a href="new_pwd.html"><u>Forgot Password?<u></a>
+      </div>
+    </div>
+    <center>
+      <div id="content"> </div>
+</body>
+<script src="../js/signin.js"></script>
+<script src="../js/signup.js"></script>
+<script src="../js/message.js"></script>
+
+</html>
