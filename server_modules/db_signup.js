@@ -2,6 +2,8 @@ var signup=function(MongoClient,url,req,res,callback)
 {
   MongoClient.connect(url, function(err, db)
   {
+  console.log("MongoDB URL", url);  
+  console.log("Database", db);
   db.collection("Storage").find({
     username: req.body.username
   }).toArray(function(err, data) {

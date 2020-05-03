@@ -1,9 +1,12 @@
-var redis = require('redis');
+// require('dotenv').config()
 
-var redisClient = redis.createClient({
-  host: 'localhost',
-  port: 6379
-});
+// var redis = require('redis');
+
+// var redisClient = redis.createClient({
+//   host: 'localhost',
+//   port: 6379
+// });
+
 var online=[];
 var messagehistory=function(MongoClient,url,redisClient,req,res,callback)
 {

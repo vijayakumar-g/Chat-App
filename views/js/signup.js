@@ -35,9 +35,11 @@ function validate() {
     document.getElementById("error-container").innerHTML = "Not valid password!";
   } else if (pwd.length < 6) {
     document.getElementById("error-container").innerHTML = "Password length minimum 6 characters!";
-  } else if (!pattern.test(pwd)) {
-    document.getElementById("error-container").innerHTML = "Password should contain atleast one number and one special character!";
-  } else {
+  } 
+  // else if (!pattern.test(pwd)) {
+  //   document.getElementById("error-container").innerHTML = "Password should contain atleast one number and one special character!";
+  // }
+   else {
     signup();
   }
 }

@@ -1,3 +1,4 @@
+require('dotenv').config()
 /**requiring express module*/
 var express = require("express");
 var app = express();
@@ -15,7 +16,14 @@ var router = express.Router();
 var PORT = process.env.PORT || 3006;
 /**mongo db is connected to store the database**/
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/chatApp";
+
+var url = "";
+
+if(process.env.MG_USER) {
+  url= `mongodb://${process.env.MG_USER}:${process.env.MG_PWD}@${process.env.MG_HOST}:${process.env.MG_PORT}/chatApp`;
+}
+else url = "mongodb://localhost:".concat(process.env.MG_PORT, "/chatApp");
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

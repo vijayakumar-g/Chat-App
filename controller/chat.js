@@ -1,3 +1,4 @@
+require('dotenv').config()
 /**requiring express module*/
 var express = require("express");
 
@@ -11,14 +12,23 @@ var redis = require('redis');
 
 var online = [];
 
-var redisClient = redis.createClient({
-  host: 'localhost',
-  port: 6379
-});
+var host = process.env.REDIS_HOST;
+var port = process.env.REDIS_PORT;
+var redisClient = redis.createClient(port, host);
+
+if(process.env.REDIS_PASSWORD) {
+  redisClient.auth(process.env.REDIS_PASSWORD);
+}
 
 var MongoClient = require('mongodb').MongoClient;
 
-var url = "mongodb://localhost:27017/chatApp";
+var url = "";
+
+if(process.env.MG_USER) {
+  url= `mongodb://${process.env.MG_USER}:${process.env.MG_PWD}@${process.env.MG_HOST}:${process.env.MG_PORT}/chatApp`;
+}
+else url = "mongodb://localhost:".concat(process.env.MG_PORT, "/chatApp");
+
 
 var function1 = require('../server_modules/db_signup.js');
 
